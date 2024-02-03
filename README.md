@@ -6,7 +6,7 @@ This project is a Django application for managing price alerts for cryptocurrenc
 ## Setup
 Follow these steps to set up and run the project:
 
-Open the terminal and navigate to the project directory and run this command
+## Open the terminal and navigate to the project directory and run this command
 
 Install the honcho library using this command
 
