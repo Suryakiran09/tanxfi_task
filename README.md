@@ -10,11 +10,13 @@ Open the terminal and navigate to the project directory and run this command
 
 Install the honcho library using this command
 
-pip install honcho
+
+**pip install honcho**
+
 
 and run this command to start the django api and background tasks
 
-### *honcho start*
+### **honcho start**
 
 If that doesn't work
 
@@ -61,11 +63,11 @@ url : http://127.0.0.1:8000/alerts/create/
 
 - http://127.0.0.1:8000/token/ - Here we can create the JWT token to access the API
 
-and also there is no user creation functionality in this code a django super user has been created 
+  and also there is no user creation functionality in this code a django super user has been created 
 
-with user name surya and password 001
+  with user name surya and password 001
 
-using this you can create the access token and refresh token
+  using this you can create the access token and refresh token
 
 - http://127.0.0.1:8000/token/refresh/ - Here using the refresh token we had before we can get the new access token
 
