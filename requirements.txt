@@ -1,0 +1,8 @@
+Django==3.2.6
+djangorestframework==3.12.4
+celery==5.1.2
+django-celery-beat==2.2.0
+channels==3.0.4
+djangorestframework-simplejwt==5.0.2
+django-redis==5.0.0
+Requests==2.31.0
