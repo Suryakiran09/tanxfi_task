@@ -11,7 +11,7 @@ Open the terminal and navigate to the project directory and run this command
 Install the honcho library using this command
 
 
-**pip install honcho**
+### **pip install honcho**
 
 
 and run this command to start the django api and background tasks
