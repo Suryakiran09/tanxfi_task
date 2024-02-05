@@ -161,3 +161,9 @@ You can Choose any one of this
 In this application I used django rest frame work to build a api which continously checks the bitcoin price and also this api allows the users to create, delete and see the list of all the alerts they have created. I used inbuilt sqlite database for this api and used the api which was provided in the task details file and used it to monitor the bitcoin price and created the functionality which sends email to the user when the alert has been triggered. Here I used celery and redis which I used for the background tasks. I have used the Docker and honcho for running all the tasks at once.
 
 To test the api start the api and run the commands in testing.ipynb
+
+
+##Alert success mail
+
+
+![Alert success mail](Alert_mail.jpg)
