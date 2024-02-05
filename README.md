@@ -38,6 +38,10 @@ You can Choose any one of this
 
 - ## 1. Using Docker
 
+  - Open Docker Desktop
+ 
+  - In Terminal within the same path type the below commands
+
   - Create the Docker Image
 
     ```bash
