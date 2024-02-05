@@ -17,6 +17,10 @@ This project is a Django application for managing price alerts for cryptocurrenc
 
 ## Open tanxfi_task main_folder
 
+  - Go to the project folder using
+
+        cd tanxfi_task
+
   - To check whether you are in correct path or not
     type tree in the cmd
     ```bash
