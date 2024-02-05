@@ -29,7 +29,7 @@ def check_price_and_notify(alert_id):
         subject = 'Price Alert Triggered'
         message = f'The price of {alert.cryptocurrency} has reached your target price of {alert.target_price}!'
         from_email = settings.DEFAULT_FROM_EMAIL
-        recipient_list = [alert.user.email]
+        recipient_list = ['xyz@gmail.com']
 
         send_mail(subject, message, from_email, recipient_list, fail_silently=False)
 
