@@ -163,7 +163,9 @@ In this application I used django rest frame work to build a api which continous
 To test the api start the api and run the commands in testing.ipynb
 
 
-##Alert success mail
+
+## Alert success mail
+
 
 
 ![Alert success mail](Alert_mail.jpg)
