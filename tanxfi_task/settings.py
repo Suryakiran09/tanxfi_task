@@ -106,7 +106,7 @@ EMAIL_USE_TLS = True
 
 # Gmail SMTP credentials
 EMAIL_HOST_USER = 'suryakirant7@gmail.com'
-EMAIL_HOST_PASSWORD = 'ctlmomoowsesfaii'
+EMAIL_HOST_PASSWORD = 'change your key'
 
 # Default 'from' address for emails sent by Django
 DEFAULT_FROM_EMAIL = 'suryakirant7@gmail.com'
