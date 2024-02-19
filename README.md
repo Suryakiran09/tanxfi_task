@@ -3,6 +3,8 @@
 ## Description
 This project is a Django application for managing price alerts for cryptocurrencies.
 
+### Change your email key in settings.py
+
 ## How to Run
 1. **Install Docker:**
     - Ensure you have Docker installed on your machine. Follow the instructions based on your operating system:
