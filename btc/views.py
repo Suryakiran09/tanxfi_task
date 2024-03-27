@@ -8,15 +8,14 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
 from .models import PriceAlert
 from .serializers import PriceAlertSerializer
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
-class PriceAlertListCreateView(generics.ListCreateAPIView):
+class PriceAlertListCreateView(generics.CreateAPIView):
     serializer_class = PriceAlertSerializer
-
-    def get_queryset(self):
-         return PriceAlert.objects.all()
-
+    
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -36,10 +35,14 @@ class PriceAlertDeleteView(generics.DestroyAPIView):
 @permission_classes([IsAuthenticated])
 class PriceAlertStatusListView(generics.ListAPIView):
     serializer_class = PriceAlertSerializer
+    
+    @method_decorator(cache_page(60 * 60 * 2))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
     def get_queryset(self):
         status_filter = self.request.query_params.get('status', None)
         if status_filter:
-             return PriceAlert.objects.all(status=status_filter)
+             return PriceAlert.objects.filter(status=status_filter)
         else:
              return PriceAlert.objects.all()
