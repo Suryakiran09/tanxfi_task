@@ -24,11 +24,5 @@ RUN python manage.py migrate
 # Expose port 8000
 EXPOSE 8000
 
-# Copy the entrypoint script into the container
-COPY entrypoint.sh /tanxfi_task/entrypoint.sh
-
-# Give execute permissions to the script
-RUN chmod +x /tanxfi_task/entrypoint.sh
-
-# Run the entrypoint script
-CMD ["/tanxfi_task/entrypoint.sh"]
+# Start the application using multiple CMD commands
+CMD redis-server & python manage.py runserver 0.0.0.0:8000 & celery -A tanxfi_task worker --pool=solo -l info & celery -A tanxfi_task beat -l info
