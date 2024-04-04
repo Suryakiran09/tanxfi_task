@@ -3,8 +3,6 @@
 ## Description
 This project is a Django application for managing price alerts for cryptocurrencies.
 
-### Change your email key in settings.py
-
 ## How to Run
 1. **Install Docker:**
     - Ensure you have Docker installed on your machine. Follow the instructions based on your operating system:
@@ -97,6 +95,23 @@ You can Choose any one of this
 
 # END-POINTS
 
+
+  - Users register endpoint http://localhost:8000/users/register/
+
+  {
+    "username":"",
+    "password":"",
+    "email":""
+  }
+
+  -JWT Token endpoint http://localhost:8000/token/
+
+  {
+    "email":"",
+    "password":""
+  }
+
+
   - 1. Use this if you are using Docker ---**Docker**---
 
        url : http://localhost:8000/alerts/create/
@@ -113,12 +128,6 @@ You can Choose any one of this
 
       - http://localhost:8000/token/ - Here we can create the JWT token to access the API
 
-        and also there is no user creation functionality in this code a django super user has been created 
-
-        with user name surya and password 001
-
-        using this you can create the access token and refresh token
-
       - http://localhost:8000/token/refresh/ - Here using the refresh token we had before we can get the new access token
 
 
@@ -131,6 +140,14 @@ You can Choose any one of this
        to stop this just press ctrl+c
   
        you can access the api's in the web browser using this url
+
+       - Users register endpoint http://127.0.0.1:8000/users/register/
+
+      {
+        "username":"",
+        "password":"",
+        "email":""
+      }
   
        url : http://127.0.0.1:8000/alerts/create/
 

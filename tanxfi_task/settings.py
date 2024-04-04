@@ -29,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+AUTH_USER_MODEL = 'users.CustomUser'
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'celery',
     'channels',
+    'users',
     'rest_framework',
     'rest_framework_simplejwt',
     'btc'
@@ -97,7 +101,7 @@ EMAIL_USE_TLS = True
 
 # Gmail SMTP credentials
 EMAIL_HOST_USER = 'suryakirant7@gmail.com'
-EMAIL_HOST_PASSWORD = 'change your key'
+EMAIL_HOST_PASSWORD = 'ctlmomoowsesfaii'
 
 # Default 'from' address for emails sent by Django
 DEFAULT_FROM_EMAIL = 'suryakirant7@gmail.com'
