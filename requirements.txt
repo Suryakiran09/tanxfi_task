@@ -6,3 +6,4 @@ channels
 djangorestframework-simplejwt
 django-redis
 Requests
+ccxt

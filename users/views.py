@@ -13,6 +13,7 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.core.mail import send_mail
 from django.contrib.auth import get_user_model
+from django.contrib.auth import login
 
 User = get_user_model()
 
@@ -23,6 +24,13 @@ class RegisterView(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
-
+        login(request, user)
+        message = {
+            "status" : "success",
+            "message" :  "User Successfully signed up",
+            "payload" : {
+                "user_id" : user.id
+            }
+        }
         
-        return Response({'message': 'User created successfully'}, status=status.HTTP_201_CREATED)
+        return Response(data = message, status=status.HTTP_201_CREATED)

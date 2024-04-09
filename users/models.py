@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 from django.conf import settings
+from decimal import Decimal
     
     
 class CustomUserManager(BaseUserManager):
@@ -36,3 +37,38 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+    def save(self, *args, **kwargs):
+        is_new = self.pk is None
+        super().save(*args, **kwargs)
+
+        if is_new:
+            from btcc.models import Wallet  # Import Wallet model here
+
+            # Create Bitcoin wallet
+            Wallet.objects.create(
+                user=self,
+                wallet='BTC',
+                balance=Decimal('0.00')
+            )
+
+            # Create Ethereum wallet
+            Wallet.objects.create(
+                user=self,
+                wallet='ETH',
+                balance=Decimal('0.00')
+            )
+
+            # Create Dogecoin wallet
+            Wallet.objects.create(
+                user=self,
+                wallet='DOGE',
+                balance=Decimal('0.00')
+            )
+            
+            Wallet.objects.create(
+                user=self,
+                wallet='USDT',
+                balance=Decimal('0.00')
+            )
+    
+    
