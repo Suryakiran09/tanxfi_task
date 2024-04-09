@@ -1,5 +1,7 @@
 # Tanxfi Task
 
+First Register at http://localhost:8000/user/signup/
+
 ## Description
 This project is a Django application for managing price alerts for cryptocurrencies.
 
