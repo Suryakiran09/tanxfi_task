@@ -190,3 +190,7 @@ To test the api start the api and run the commands in testing.ipynb
 
 
 ![Alert success mail](Alert_mail.png)
+
+
+
+# See the Backend Task pdf It was also added in the same application but didn't documented it
